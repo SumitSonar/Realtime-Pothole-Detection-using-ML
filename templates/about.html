@@ -1,0 +1,27 @@
+{% extends 'template.html' %} {% block title %}About Us{% endblock %} {% block
+css %}
+<link rel="stylesheet" href="{{ url_for('static', path='about.css') }}" />
+{% endblock %} {% block body %}
+<div class="container">
+  <div class="content">
+    <img
+      src="{{ url_for('static', path='img/7.jpg') }}"
+      alt="Computer with code on the screen"
+      class="image"
+    />
+    <div class="text-content">
+      <h2>ABOUT US</h2>
+      <h1>Be Careful of Pothole</h1>
+      <p>
+        "We specialize in using advanced technology to detect potholes and
+        improve road safety. Our platform enables real-time reporting, helping
+        communities and authorities address road damage efficiently. We're
+        committed to reducing vehicle damage and enhancing driving experiences
+        by making roads safer and smoother for everyone."
+      </p>
+      <br />
+      <a href="#" class="learn-more-btn">Learn More</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

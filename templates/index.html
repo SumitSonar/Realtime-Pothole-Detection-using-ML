@@ -1,0 +1,122 @@
+{% extends "template.html" %} {% block css %}
+<link rel="stylesheet" href="{{ url_for('static', path='about.css') }}" />
+{% endblock %} {% block body %}
+<header>
+  <nav>
+    <div class="logo">
+      <h1>Spothole</h1>
+      <img
+        src="{{ url_for('static', path='img/icon.png') }}"
+        alt="Pothole Icon"
+        class="icon"
+      />
+    </div>
+
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About us</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Carousel Start -->
+<div class="container-fluid p-0 pb-5 mb-5">
+  <div
+    id="header-carousel"
+    class="carousel slide carousel-fade"
+    data-ride="carousel"
+  >
+    <ol class="carousel-indicators">
+      <li data-target="#header-carousel" data-slide-to="0" class="active"></li>
+      <li data-target="#header-carousel" data-slide-to="1"></li>
+      <li data-target="#header-carousel" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active" style="min-height: 300px">
+        <img
+          class="position-relative w-100"
+          src="{{ url_for('static', path='img/blog6.jpg') }}"
+          style="min-height: 300px; object-fit: cover"
+        />
+        <div
+          class="carousel-caption d-flex align-items-center justify-content-center"
+        >
+          <div class="p-5" style="width: 100%; max-width: 900px">
+            <h5 class="text-white text-uppercase mb-md-3">
+              Best Pothole Detection
+            </h5>
+            <h1 class="display-3 text-white mb-md-4">
+              Prevent Potholes, Protect Lives
+            </h1>
+
+            <a href="/dashboard">
+              <button>Start</button>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item" style="min-height: 300px">
+        <img
+          class="position-relative w-100"
+          src="{{ url_for('static', path='img/blog5.jpg') }}"
+          style="min-height: 300px; object-fit: cover"
+        />
+        <div
+          class="carousel-caption d-flex align-items-center justify-content-center"
+        >
+          <div class="p-5" style="width: 100%; max-width: 900px">
+            <h5 class="text-white text-uppercase mb-md-3">
+              Best Pothole Detection
+            </h5>
+            <h1 class="display-3 text-white mb-md-4">
+              Detect and drive with confidence.
+            </h1>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item" style="min-height: 300px">
+        <img
+          class="position-relative w-100"
+          src="{{ url_for('static', path='img/blog7.jpg') }}"
+          style="min-height: 300px; object-fit: cover"
+        />
+        <div
+          class="carousel-caption d-flex align-items-center justify-content-center"
+        >
+          <div class="p-5" style="width: 100%; max-width: 900px">
+            <h5 class="text-white text-uppercase mb-md-3">
+              Best Pothole Detection
+            </h5>
+            <h1 class="display-3 text-white mb-md-4">
+              Smart technology, safer roads.
+            </h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="content">
+    <img
+      src="{{ url_for('static', path='img/7.jpg')}}"
+      alt="Computer with code on the screen"
+      class="image"
+    />
+    <div class="text-content">
+      <h2>ABOUT US</h2>
+      <h1>Be Careful Of Pothole</h1>
+      <p>
+        "we specialize in using advanced technology to detect potholes and
+        improve road safety. Our platform enables real-time reporting, helping
+        communities and authorities address road damage efficiently. We're
+        committed to reducing vehicle damage and enhancing driving experiences
+        by making roads safer and smoother for everyone."
+        <br /><br /><a href="#" class="learn-more-btn">Learn More</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+{% endblock body %}

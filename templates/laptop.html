@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enable Laptop Camera</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            text-align: center;
+        }
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 3px solid #333;
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: #fff;
+        }
+        video {
+            width: 640px;
+            height: 480px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Live Camera Feed</h1>
+    <div class="video-container">
+        <video id="liveCamera" autoplay></video>
+    </div>
+    <script>
+        // Select the video element in the DOM
+        const videoElement = document.getElementById('liveCamera');
+
+        // Check if the browser supports getUserMedia API
+        if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+            // Request access to the camera
+            navigator.mediaDevices.getUserMedia({ video: true })
+                .then((stream) => {
+                    // Set the source of the video element to the webcam stream
+                    videoElement.srcObject = stream;
+                })
+                .catch((err) => {
+                    console.error("Error accessing the camera: ", err);
+                    alert("Error accessing the camera: " + err.message);
+                });
+        } else {
+            alert("getUserMedia is not supported on your browser. Please try using a modern browser like Chrome or Firefox.");
+        }
+    </script>
+</body>
+</html>
